@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<h1>order Ice Cream</h1>
+<form action="{% url 'order' %}" method="POST"> {% comment %} enctype="multipart/form-data"{% endcomment %}
+	{% csrf_token %}
+	{{ icecreams_form }}
+	<h2>{{ note }}</h2>
+	<input type="submit" value="Order IceCream" class="btn btn-primary">
+</form>
